@@ -1,6 +1,17 @@
 # Corso shell bash
 
-[TOC]
+<!-- MarkdownTOC autolink="true" -->
+
+- [Introduzione](#introduzione)
+- [Mostrare i file imparando a scoprire opzioni e parametri dei vari comandi](#mostrare-i-file-imparando-a-scoprire-opzioni-e-parametri-dei-vari-comandi)
+- [Scopriamo i vari modi di creare un file da linea di comando e come leggerne il contenuto](#scopriamo-i-vari-modi-di-creare-un-file-da-linea-di-comando-e-come-leggerne-il-contenuto)
+- [Gestiamo le cartelle e muoviamoci al loro interno](#gestiamo-le-cartelle-e-muoviamoci-al-loro-interno)
+- [Copiamo, spostiamo, rinominiamo e rimuoviamo file e cartelle](#copiamo-spostiamo-rinominiamo-e-rimuoviamo-file-e-cartelle)
+- [Gli utenti e i permessi](#gli-utenti-e-i-permessi)
+- [I programmi, le shortcut e il gestore pacchetti](#i-programmi-le-shortcut-e-il-gestore-pacchetti)
+
+<!-- /MarkdownTOC -->
+
 
 ## Introduzione
 
