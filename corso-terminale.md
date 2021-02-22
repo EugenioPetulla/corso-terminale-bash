@@ -71,7 +71,7 @@ Ma se volessimo invece stampare qualcosa già nel file di output?
 La cosa è più semplice di quanto pensiate, ci basterà infatti usare un comando che stampa del testo a video e un filtro.
 Stiamo correndo troppo? Ok, partiamo dal comando `echo` che si trova anche in molti linguaggi di programmazione e che serve appunto a stampare a video un determinato testo o il risultato di una serie di operazioni.
 
-Proviamo a digitare `echo 'skillsAndMore'` nel nostro terminale e vedremo immediatamente che il terminale ci riproporrà quello che abbiamo riportato tra singoli apici. Per ora nulla di troppo utile ma se consideriamo che questo è solo un comando per pilotare un output iniziamo a capire le potenzialità della cosa. Proviamo ad esempio a digitare `echo '1+1'`, quello che ci aspettiamo è di ricevere la somma di questi due numeri ma in realtà vederemo che a tornarci sarà la mera rappresentazione grafica di 1+1 perché il comando va istruito e finchè non specifichiamo che deve eseguire una operazione matematica prima di stampare il risultato lui la interpreterà sempre come una semplice stringa di testo. Vediamo ora il modo giusto di fargli eseguire dei calcoli: `echo $((1+1))`. Il risultato stampato a video sarà ovviamente 2.
+Proviamo a digitare `echo 'Linux è bello'` nel nostro terminale e vedremo immediatamente che il terminale ci riproporrà quello che abbiamo riportato tra singoli apici. Per ora nulla di troppo utile ma se consideriamo che questo è solo un comando per pilotare un output iniziamo a capire le potenzialità della cosa. Proviamo ad esempio a digitare `echo '1+1'`, quello che ci aspettiamo è di ricevere la somma di questi due numeri ma in realtà vederemo che a tornarci sarà la mera rappresentazione grafica di 1+1 perché il comando va istruito e finchè non specifichiamo che deve eseguire una operazione matematica prima di stampare il risultato lui la interpreterà sempre come una semplice stringa di testo. Vediamo ora il modo giusto di fargli eseguire dei calcoli: `echo $((1+1))`. Il risultato stampato a video sarà ovviamente 2.
 
 ![](assets/terminale-echo.png)
 
@@ -79,12 +79,12 @@ Abbiamo usato un operatore matematico per raggiugnere uno scopo diverso da quell
 
 Doabbiamo *filtrare l'outuput* del comando reindirizzandolo nel file. Tranquillo non è così difficile come sembra a parole, ci basta un semplice carattere che fà questo al posto nostro, una parentesi angolare acuta o per farla più semplice `>`.
 
-Proviamo a scrivere skillsAndMore nel file test.txt reindirizzandoci l'outuput in questo modo: `echo 'skillsAndMore' > test.txt`
+Proviamo a scrivere "Linux è bello" nel file test.txt reindirizzandoci l'outuput in questo modo: `echo 'Linux è bello' > test.txt`
 
-Fatto questo proviamo ad aprire il nostro file e noteremo che skillsAndMore è stato scritto al suo interno.
+Fatto questo proviamo ad aprire il nostro file e noteremo che la frase è stato scritto al suo interno.
 Aggiungiamo a questa lezione anche un comando molto utile, che serve appunto per leggere cosa c'è scritto dentro un file senza doverlo aprire in un editor di testo esterno, perché la shell è capace anche di questo!
 
-Digitiamo il comando `cat test.txt` e ci verrà restituito l'output `skillsAndMore` contenuto al suo interno. Il comando `cat` è uno di quei comandi che troverete spesso in giro per la rete e che vi consentirà ad esempio di leggere parametri all'interno di un file di configurazione oppure di unire due o più file in uno unico. Come si fa? Semplice, applichiamo il concetto di *pipe* appreso in precedenza anche a questo comando ma prima creiamo un nuovo file di testo che chiameremo test2.txt con all'interno altro testo: `echo 'la scuola del digitale' > test2.txt` poi assicuriamoci del suo contenuto richiamando il comando `cat` sul file appena creato e passiamo ad unire i due file concatenandoli con `cat test.txt test2.txt > test3.txt` e il risultato della operazione sarà un file che contiene entrambe i testi contenuti nei due file. Semplice e diretto, non credi?
+Digitiamo il comando `cat test.txt` e ci verrà restituito l'output `Linux è bello` contenuto al suo interno. Il comando `cat` è uno di quei comandi che troverete spesso in giro per la rete e che vi consentirà ad esempio di leggere parametri all'interno di un file di configurazione oppure di unire due o più file in uno unico. Come si fa? Semplice, applichiamo il concetto di *pipe* appreso in precedenza anche a questo comando ma prima creiamo un nuovo file di testo che chiameremo test2.txt con all'interno altro testo: `echo 'la scuola del digitale' > test2.txt` poi assicuriamoci del suo contenuto richiamando il comando `cat` sul file appena creato e passiamo ad unire i due file concatenandoli con `cat test.txt test2.txt > test3.txt` e il risultato della operazione sarà un file che contiene entrambe i testi contenuti nei due file. Semplice e diretto, non credi?
 
 ![](assets/terminale-cat.png)
 
@@ -96,9 +96,9 @@ Fino a ora abbiamo parlato di file ma sappiamo bene che un sistema operativo è 
 
 Una cartella non è un file e quindi non può essere trattata allo stesso modo. Non possiamo ad esempio crearla con il compando `touch` e non possiamo scrivere nulla dentro di lei direttamente con `echo` ma dobbiamo usare l'apposito comando `mkdir`.
 
-Creare la nostra cartella in cui raggruppare i file della lezione precedente è facilissimo, ci basterà un `mkdir skillsandmore`. Una volta creata la cartella possiamo iniziare a capire come muoverci al suo interno.
+Creare la nostra cartella in cui raggruppare i file della lezione precedente è facilissimo, ci basterà un `mkdir prova`. Una volta creata la cartella possiamo iniziare a capire come muoverci al suo interno.
 
-Il comando per spostarci da una posizione a un'altra è `cd`, ovvero change directory, e basta farlo seguire dalla posizione della cartella in cu vogliamo spostarci per raggiungere il risultato. Nel nostro caso ci basterà dare `cd skillsandmore`, ricordiamoci sempre che c'è il tasto TAB che ci aiuta spesso nell'autocompletamento sia quando non ci va di scrivere i nomi lunghi, sia quando non ci ricordiamo bene l'intera posizione.
+Il comando per spostarci da una posizione a un'altra è `cd`, ovvero change directory, e basta farlo seguire dalla posizione della cartella in cu vogliamo spostarci per raggiungere il risultato. Nel nostro caso ci basterà dare `cd prova`, ricordiamoci sempre che c'è il tasto TAB che ci aiuta spesso nell'autocompletamento sia quando non ci va di scrivere i nomi lunghi, sia quando non ci ricordiamo bene l'intera posizione.
 
 ![](assets/terminale-mkdir.png)
 
@@ -108,14 +108,14 @@ Solitamente un sistema operativo parte da una cartella radice, che si chiama app
 
 ![](assets/terminale-root.png)
 
-Per accedere direttamente a una cartella che si trova all'interno della posizione in cui siamo attualmente ci basterà scrivere il nome della cartella dopo il comando `cd`, come abbiamo visto prima nel caso della cartella `skillsandmore` ma per accedere a una cartella fuori percorso?
+Per accedere direttamente a una cartella che si trova all'interno della posizione in cui siamo attualmente ci basterà scrivere il nome della cartella dopo il comando `cd`, come abbiamo visto prima nel caso della cartella `prova` ma per accedere a una cartella fuori percorso?
 Niente di più facile, infatti ci basta conoscere il path per usare sempre `cd` come abbiamo fatto fino a ora.
 
 Accediamo per esempio alla cartella `Documenti` all'interno della nostra home digitando semplicemente `cd /home/eugenio/Documenti`. Ricordiamoci sempre di aiutarci con l'autocompletamento (TAB) e del fatto che i sistemi unix-like sono **case sensitive**, ovvero riconoscono le differenze tra lettere maiuscole e minuscole.
 
 ![](assets/terminale-cd.png)
 
-Prima di lasciarvi al quiz di fine lezione voglio aggiungere una piccola cosa che vi aiuterà a risparmiare tempo. Ora ci troviamo nella cartella *Documenti* e vogliamo tornare nella cartella *skillsandmore*, potremo fare come prima e scrivere tutto il percorso che conosciamo a partire dalla root, passando per la home, il nostro nome utente e poi la nostra cartella, ma è tantissima roba e se il percorso fosse ancora più lungo e intricato? In fondo queste due cartelle condividono la *loro radice* quindi basta dire al terminale di tornare indietro e di entrare nell'altra! Per fare questo ci basta usare i due puntini di prima, come il comando `cd` li accetta da soli, li prende anche accoppiati ad un percorso.
+Prima di lasciarvi al quiz di fine lezione voglio aggiungere una piccola cosa che vi aiuterà a risparmiare tempo. Ora ci troviamo nella cartella *Documenti* e vogliamo tornare nella cartella *prova*, potremo fare come prima e scrivere tutto il percorso che conosciamo a partire dalla root, passando per la home, il nostro nome utente e poi la nostra cartella, ma è tantissima roba e se il percorso fosse ancora più lungo e intricato? In fondo queste due cartelle condividono la *loro radice* quindi basta dire al terminale di tornare indietro e di entrare nell'altra! Per fare questo ci basta usare i due puntini di prima, come il comando `cd` li accetta da soli, li prende anche accoppiati ad un percorso.
 
 ![](assets/terminale-puntini.png)
 
@@ -123,7 +123,7 @@ Prima di lasciarvi al quiz di fine lezione voglio aggiungere una piccola cosa ch
 
 Ora che sappiamo come muoverci all'interno delle cartelle iniziamo a capire come spostare i file da un posto ad un altro. Il comando che si usa per fare questo è `mv`, *move*, seguito dal percorso del file da spostare e dal percorso in cui vogliamo mandarlo.
 
-Mettiamo caso di voler spostare il nostro file *test.txt* nella cartella *skillsandmore*, ci basterà digitare `mv test.txt skillsandmore`. Ma mettiamo caso di voler spostare anche *test2.txt* e *test3.txt* nella stessa cartella con un comando solo, allora ci basterà rigirare lo schema e usare l'opzione `-t` in questo modo `mv -t skillsandmore/ test2.txt test3.txt`, con la cartella di destinazione che precede la lista di file da spostare.
+Mettiamo caso di voler spostare il nostro file *test.txt* nella cartella *prova*, ci basterà digitare `mv test.txt prova`. Ma mettiamo caso di voler spostare anche *test2.txt* e *test3.txt* nella stessa cartella con un comando solo, allora ci basterà rigirare lo schema e usare l'opzione `-t` in questo modo `mv -t prova/ test2.txt test3.txt`, con la cartella di destinazione che precede la lista di file da spostare.
 
 Ricordiamoci sempre che con i puntini seguiti dallo slash possiamo indicare al terminale la cartella subito precedente a quella in cui siamo, quindi se volessimo spostare indietro i file ci basterebbe dare un bel `mv test.txt ../`.
 
@@ -133,7 +133,7 @@ Posizioniamoci nella nostra cartella dove abbiamo spostato i file e digitiamo: `
 
 ![](assets/terminale-wildtxt.png)
 
-Proviamo ora a spostarli selezionandoli per l'occorrenza *test*, `mv *test* skillsandmore`, e vediamo che avendolo messo tra asterischi lui non ha fatto altro che cercare tutti i file che contenevano quella wildcard per applicargli il comando da noi desiderato. Ovviamente il concetto di wildcard resta valido per quasi la totalità dei comandi unix.
+Proviamo ora a spostarli selezionandoli per l'occorrenza *test*, `mv *test* prova`, e vediamo che avendolo messo tra asterischi lui non ha fatto altro che cercare tutti i file che contenevano quella wildcard per applicargli il comando da noi desiderato. Ovviamente il concetto di wildcard resta valido per quasi la totalità dei comandi unix.
 
 ![](assets/terminale-wildcard.png)
 
@@ -155,7 +155,7 @@ Ora che sappiamo come operare sui file vediamo come usare questi stessi comandi 
 
 Per esempio se vogliamo spostarle, il comando `mv` funzionerà egregiamente con tutto quello che abbiamo visto fino a ora ma, se vogliamo copiare una cartella con all'interno tutti i suoi file dovremo prendere l'accortezza di usare un parametro in più, ovvero `cp -r`. Questo parametro serve a rendere *ricorsivo* il comando e a operare non solo sul percorso specificato ma anche su tutti i file e cartelle in esso contenuti.
 
-Creiamo una cartella *test* all'interno della nostra *home*, sullo stesso livello della cartella *skillsandmore* e proviamo con le nostre mani a spostare la seconda che contiene i file di testo nella prima che dovrebbe essere vuota.
+Creiamo una cartella *test* all'interno della nostra *home*, sullo stesso livello della cartella *prova* e proviamo con le nostre mani a spostare la seconda che contiene i file di testo nella prima che dovrebbe essere vuota.
 
 ![](assets/terminale-mv-cartella.png)
 
@@ -171,7 +171,7 @@ I sistemi Unix-like hanno come punto di forza una gestione degli utenti e dei pe
 
 Cerchiamo di andare piano e di spiegare un passo per volta con esempi pratici quello di cui parlo.
 
-Se ora aprite il vostro terminale e vi posizionate nella cartella skillsandmore che abbiamo creato in precedenza possiamo verificare i permessi dei file in essa contenuti usando il comando `ls -l`.
+Se ora aprite il vostro terminale e vi posizionate nella cartella che abbiamo creato in precedenza possiamo verificare i permessi dei file in essa contenuti usando il comando `ls -l`.
 
 ![](assets/terminale-permessi.png)
 
@@ -230,7 +230,7 @@ Il sistema ottale è semplicissimo, non ho tirato fuori il numero *660* a caso m
 
 Come noterete basterà ricordare che il valore di **r è 4**, quello di **w è 2** e quello di **x è 1**. Tutti gli altri permessi derivano dalla somma di questi tre più il permesso 0 che è il valore per annullare tutti i permessi.
 
-Proviamo ora ad assegnare a tutta la cartella *skillsandmore* e ai file in essa contenuti tutti i permessi a tutti i ruoli. Torniamo nella cartella *home* che la contiene e diamo un `chmod -R 777 skillsandmore` e il gioco è fatto grazie al parametro `-R` che stabilisce la ricorsività dell'operazione e la va ad applicare a tutti i file all'interno della posizione specificata.
+Proviamo ora ad assegnare a tutta la cartella *prova* e ai file in essa contenuti tutti i permessi a tutti i ruoli. Torniamo nella cartella *home* che la contiene e diamo un `chmod -R 777 prova` e il gioco è fatto grazie al parametro `-R` che stabilisce la ricorsività dell'operazione e la va ad applicare a tutti i file all'interno della posizione specificata.
 
 ![](assets/terminale-chmod-4.png)
 
